@@ -1,4 +1,4 @@
-# EXP4a. Working with network commands
+# EXP4. Working with network commands
 
 ## Aim:
 Use of Network commands in Real Time environment.
