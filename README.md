@@ -1,15 +1,15 @@
-# EXP4a. Simulating PING command
+# EXP4a. Working with network commands
 
 ## Aim:
 Use of Network commands in Real Time environment.
 
-## Software : 
+## Software: 
 Command Prompt And Network Protocol Analyzer
 
 ## Procedure:
 To do this EXPERIMENT- follows these steps:
 
-In this EXPERIMENT- students have to understand basic networking commands e.g cpdump, netstat, ifconfig, nslookup ,traceroute and also capture ping and traceroute PDUs using a network protocol analyzer 
+In this EXPERIMENT- students have to understand basic networking commands e.g cpdump, netstat, ifconfig, nslookup, traceroute and also capture ping and traceroute PDUs using a network protocol analyzer.
 
 All commands related to Network configuration which includes how to switch to privilege mode and normal mode and how to configure router interface and how to save this configuration to flash memory or permanent memory.
 
@@ -28,7 +28,7 @@ This commands includes
 • Other IP Commands e.g. show ip route etc.
 
 ## Program:
-# Client
+# Client - Ping
 ~~~
 import socket
 from pythonping import ping
@@ -44,7 +44,7 @@ while True:
         c.send("Not Found".encode())
 ~~~
 
-# Server
+# Server - Ping
 ~~~
 import socket
 s=socket.socket()
@@ -55,12 +55,23 @@ while True:
     print(s.recv(1024).decode())
 ~~~
 
+# Traceroute
+~~~
+from scapy.all import*
+target = ["www.google.com"]
+result, unans = traceroute(target,maxttl=32)
+print(result,unans)
+~~~
+
 ## Output:
-# Client
+# Client - Ping
 ![image](https://github.com/K-Dharshini/4.Execution_of_NetworkCommends/assets/139334830/f65f73fe-b33e-4b9e-92d8-f8a0bead45e6)
 
-# Server
+# Server - Ping
 ![image](https://github.com/K-Dharshini/4.Execution_of_NetworkCommends/assets/139334830/b93fc2af-4b1d-45ab-89c7-07d1535289b7)
 
-## Result
+# Traceroute
+![image](https://github.com/K-Dharshini/4.Execution_of_NetworkCommends/assets/139334830/475b55aa-8a48-4904-ae54-bdf122234fc4)
+
+## Result:
 Thus, the Execution of Network commands is performed.
